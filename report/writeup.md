@@ -19,7 +19,7 @@ The goals / steps of this project are the following:
 [image2]: ./examples/signcount.png "Number of images per class in training data"
 [image3]: ./examples/curveLeft.png "Curve Left"
 [image4]: ./examples/Do-Not-Enter.jpg "Do Not Enter"
-[image5]: ./examples/end-speed.png "End of Speed Limit (80km)"
+[image5]: ./examples/end-speed.PNG "End of Speed Limit (80km)"
 [image6]: ./examples/stop.jpg "Stop"
 [image7]: ./examples/wild-animal.png "Wild Animal Crossing"
 
@@ -116,25 +116,28 @@ I used a learning rate of 0.001, a batch size of 128 and 30 epochs.
 
 ####5. Describe the approach taken for finding a solution. Include in the discussion the results on the training, validation and test sets and where in the code these were calculated. Your approach may have been an iterative process, in which case, outline the steps you took to get to the final solution and why you chose those steps. Perhaps your solution involved an already well known implementation or architecture. In this case, discuss why you think the architecture is suitable for the current problem.
 
-The code for defining accuracy evaluation function is located in code cell *#10*
+The code for defining accuracy evaluation function is located in code cell *#10*.
+
 The code for calculating the accuracy of the model is located in code cell *#11*, *#12* and *#13* of the Ipython notebook.
 
-My final model results were:
+### My final model results were:
 * training set accuracy of 99.5%
 * validation set accuracy of 95.6%
 * test set accuracy of 93.4%
 
-My journey of reaching the final model:
+### My journey of reaching the final model:
 * What was the first architecture that was tried and why was it chosen?
 
 I first started from the LeNet in the lab with 6 features in the 1st convolution, and 16 features in the 2nd convolution. It's a nice set up because it's used in image classification of a different data set that has the same dimension. I thought it would probably work well in this data set too. 
 
 * What were some problems with the initial architecture?
+
 1. The number of features are too small in the convolution layers. We are trying to classify images with more complex set of features, and more variaty of features in the traffic signs, instead of just small curves, straight lines and circles as they have in digits.
 
 2. The model was overfitting with the training data so the validation accuracy was very low.
 
 * How was the architecture adjusted and why was it adjusted? Typical adjustments could include choosing a different model architecture, adding or taking away layers (pooling, dropout, convolution, etc), using an activation function or changing the activation function. One common justification for adjusting an architecture would be due to over fitting or under fitting. A high accuracy on the training set but low accuracy on the validation set indicates over fitting; a low accuracy on both sets indicates under fitting.
+
 * Which parameters were tuned? How were they adjusted and why?
 
 1. I tuned the number of features in the convolution layers to 32 and 64. I tried bigger numbers and they didn't perform well either.
@@ -146,7 +149,8 @@ I first started from the LeNet in the lab with 6 features in the 1st convolution
 The convolution layers work well with this problem because traffic signs have specific sets of features (numbers, shapes, etc). The convolution layers can extract these features, and learn how they are related to the meaning of the signs.
 
 * How does the final model's accuracy on the training, validation and test set provide evidence that the model is working well?
- They all have relatively high accuracy (more than 90%). The model converges very fast too, usually within 20 to 30 epochs. 
+
+They all have relatively high accuracy (more than 90%). The model converges very fast too, usually within 20 to 30 epochs. 
 
 ###Test a Model on New Images
 
@@ -154,7 +158,10 @@ The convolution layers work well with this problem because traffic signs have sp
 
 Here are five German traffic signs that I found on the web:
 
-![alt text][image3] ![alt text][image4] ![alt text][image5] ![alt text][image6] 
+![alt text][image3] 
+![alt text][image4] 
+![alt text][image5] 
+![alt text][image6] 
 ![alt text][image7] 
 
 The 1st and 2nd images should be easy to classify because the contrast is large and the shapes of the sign are simple.
